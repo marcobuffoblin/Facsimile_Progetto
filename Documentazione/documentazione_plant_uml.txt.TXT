@@ -1,0 +1,40 @@
+@startuml
+
+' Questo è un commento
+
+package GeomtryLibrary <<Folder>>
+{
+class Triangle
+{
++ Vertices : Matrix3d
++ Triangle(Vertices)
++double computeArea()
+}
+
+class Polygons
+{
++ Vertices:MatriXd
++ listPolygons : vector<vector<unsigned int>>>
++ v<v<v< unsigned int >>> computeTriangulation()
++ vector<double> computeArea
++ void gedimInterface(v<v<unsigned int>>&)
+..Non member funxtion..
+void importPolygons(path,polygons)
+.. TEST POLYGONS..
+TESTCOMPUTEAREA
+TESTTRIANGULATION
+}
+}
+
+package Gedim <<Frame>>
+{
+}
+
+note "Gedim is an extrenal library" as GedimN
+GedimN .. Gedim
+
+Gedim ..>Polygons::gedimInterface
+
+Triangle "many" ..o "1" Polygons : is made up
+' alternativa Triangle __o Polygons
+@enduml
